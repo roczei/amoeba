@@ -60,7 +60,7 @@ public class AmoebaBoard extends Canvas implements MouseListener{
 	public void setMatrixElem(int row, int column, GameItem a){
 		GameMatrix[row-1][column-1]=new GameItem(a);
 	}
-	public boolean PlayerNyert(String Player,Graphics g){
+	public boolean PlayerVictoryValidation(String Player,Graphics g){
 		int k,i,j;
 		boolean victory=false;
 		Graphics2D Board = (Graphics2D) g;
@@ -295,7 +295,7 @@ public class AmoebaBoard extends Canvas implements MouseListener{
 				Board.setColor(Color.WHITE);
 				Board.fillRect(110,465,100,40);				
 				
-				if (PlayerNyert(Player1,Board)){				
+				if (PlayerVictoryValidation(Player1,Board)){				
                                         PopupWindow("The winner: " + Player1,"Victory!");
 					removeMouseListener(this);
 				}		
@@ -309,7 +309,7 @@ public class AmoebaBoard extends Canvas implements MouseListener{
 				Board.fillRect(110,465,100,40);
 				Board.setColor(Color.WHITE);
 				Board.fillRect(280,465,100,40);						
-				if (PlayerNyert(Player2,Board)) {
+				if (PlayerVictoryValidation(Player2,Board)) {
 					removeMouseListener(this);				
 					PopupWindow("The winner: " + Player2,"Victory!");
 				}
